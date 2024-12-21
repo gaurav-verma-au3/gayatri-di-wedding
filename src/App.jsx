@@ -17,9 +17,9 @@ const time = {
 
 const place = {
   ringCeremony: "https://maps.google.com/?q=26.917857,81.1812233",
-  haldiCeremony: "https://maps.google.com/?q=26.742945,81.407026",
-  mehandiCeremony: "https://maps.google.com/?q=26.742945,81.407026",
-  sangeetCeremony: "https://maps.google.com/?q=26.742945,81.407026",
+  haldiCeremony: "https://maps.google.com/?q=26.743497,81.406681",
+  mehandiCeremony: "https://maps.google.com/?q=26.743497,81.406681",
+  sangeetCeremony: "https://maps.google.com/?q=26.743497,81.406681",
   weddingCeremony: "https://maps.google.com/?q=26.903688,81.15479",
   vidayiCeremony: "https://maps.google.com/?q=26.903688,81.154797",
 };
