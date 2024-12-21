@@ -29,5 +29,4 @@ const LottieContainer = styled.div`
   top: 0;
   left: 0;
   background-color: transparent;
-  z-index: 10;
 `;

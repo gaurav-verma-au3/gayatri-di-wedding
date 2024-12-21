@@ -34,7 +34,7 @@ function App() {
         <Event title={"Mehandi Ceremony"} image={images.mehandi} date={time.mehandiCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.ringCeremony} />
         <Event title={"Sangeet Ceremony"} image={images.sangeet} date={time.sangeetCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.ringCeremony} />
         <Event title={"Wedding Ceremony"} image={images.wedding} date={time.weddingCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.ringCeremony} />
-        <Event title={"Vidayi Ceremony"} image={images.wedding} date={time.vidayiCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.vidayiCeremony} />
+        <Event title={"Vidayi Ceremony"} image={images.vidayii} date={time.vidayiCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.vidayiCeremony} />
       </Mobile>
     </Wrapper>
   );
@@ -100,8 +100,6 @@ export const MainText = styled.p`
 `;
 export const SubText = styled.p`
   font-family: "Poppins", serif;
-  /* font-weight: 400; */
-  /* font-style: normal; */
   text-align: ${(props) => props.$align || "center"};
   color: #fec601;
 `;
@@ -109,8 +107,6 @@ export const SubText = styled.p`
 export const SmallText = styled.p`
   font-size: 0.8rem;
   font-family: "Poppins", serif;
-  /* font-weight: 400; */
-  /* font-style: normal; */
   text-align: ${(props) => props.$align || "center"};
   color: #fec601;
 `;

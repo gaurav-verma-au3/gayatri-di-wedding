@@ -5,6 +5,7 @@ import haldi from "./haldi.png";
 import mehandi from "./mehandi.png";
 import sangeet from "./sangeet.png";
 import wedding from "./wedding.png";
+import vidayii from "./vidayii.png";
 import * as FlowersLottie from "./flowers.json";
 
 export const images = {
@@ -16,4 +17,5 @@ export const images = {
   sangeet,
   wedding,
   FlowersLottie,
+  vidayii,
 };
