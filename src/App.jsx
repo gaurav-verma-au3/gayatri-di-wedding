@@ -30,10 +30,10 @@ function App() {
       <Mobile $height={$height}>
         <Home />
         <Event title={"Ring Ceremony"} image={images.engagement} date={time.ringCeremony} venue={"Regal Palace, Regal palace road, Near Jal Nigam, office, Yogashram Rd, Awas Vikas Colony, Barabanki, 225001"} cords={place.ringCeremony} />
-        <Event title={"Haldi Ceremony"} image={images.haldi} date={time.haldiCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.ringCeremony} />
-        <Event title={"Mehandi Ceremony"} image={images.mehandi} date={time.mehandiCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.ringCeremony} />
-        <Event title={"Sangeet Ceremony"} image={images.sangeet} date={time.sangeetCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.ringCeremony} />
-        <Event title={"Wedding Ceremony"} image={images.wedding} date={time.weddingCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.ringCeremony} />
+        <Event title={"Haldi Ceremony"} image={images.haldi} date={time.haldiCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.haldiCeremony} />
+        <Event title={"Mehandi Ceremony"} image={images.mehandi} date={time.mehandiCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.mehandiCeremony} />
+        <Event title={"Sangeet Ceremony"} image={images.sangeet} date={time.sangeetCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.sangeetCeremony} />
+        <Event title={"Wedding Ceremony"} image={images.wedding} date={time.weddingCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.weddingCeremony} />
         <Event title={"Vidayi Ceremony"} image={images.vidayii} date={time.vidayiCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.vidayiCeremony} />
       </Mobile>
     </Wrapper>
