@@ -13,7 +13,7 @@ const Event = ({ image, title, date, venue, cords }) => {
     <ScreensWrapper $height={$height}>
       <div style={{ position: "relative", height: $height + "px" }}>
         <Flowers />
-        <EventImage src={image} />
+        <EventImage src={image} alt={title} />
         <MainText>{title}</MainText>
         <MT $MT="0.5vh" />
         <DateText>{dayjs(date).format("DD MMM YYYY hh:mm a")}</DateText>
