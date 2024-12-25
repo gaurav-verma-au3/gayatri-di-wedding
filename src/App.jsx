@@ -2,9 +2,11 @@ import styled from "styled-components";
 import "./App.css";
 
 import Home from "./components/Home";
-import { images } from "./assets";
+import { audio, images } from "./assets";
 import Event from "./components/Event";
 import { $height } from "../constant";
+import AudioPlayer from "./components/AudioPlayer";
+import { useEffect, useState } from "react";
 
 const time = {
   ringCeremony: "2025-01-20T13:00:00",
@@ -25,9 +27,47 @@ const place = {
 };
 
 function App() {
+  const [audioSrc, setAudioSrc] = useState(audio.homeMp3);
+
+  const handleScroll = (e) => {
+    const top = e.target.scrollTop;
+    switch (top) {
+      case 0:
+        setAudioSrc(audio.homeMp3);
+        break;
+      case $height * 1:
+        setAudioSrc(audio.ringMp3);
+        break;
+      case $height * 2:
+        setAudioSrc(audio.haldiMp3);
+        break;
+      case $height * 3:
+        setAudioSrc(audio.mehandiMp3);
+        break;
+      case $height * 4:
+        setAudioSrc(audio.sangeetMp3);
+        break;
+      case $height * 5:
+        setAudioSrc(audio.shadiMp3);
+        break;
+      case $height * 6:
+        setAudioSrc(audio.vidayiMp3);
+        break;
+      default:
+        // setAudioSrc(audio.homeMp3);
+        break;
+    }
+  };
+
+  useEffect(() => {
+    document.getElementById("mobile").addEventListener("scroll", handleScroll);
+    return () => document.getElementById("mobile").removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Wrapper>
-      <Mobile $height={$height}>
+      <Mobile id="mobile" $height={$height}>
+        <AudioPlayer src={audioSrc} />
         <Home />
         <Event title={"Ring Ceremony"} image={images.engagement} date={time.ringCeremony} venue={"Regal Palace, Regal palace road, Near Jal Nigam, office, Yogashram Rd, Awas Vikas Colony, Barabanki, 225001"} cords={place.ringCeremony} />
         <Event title={"Haldi Ceremony"} image={images.haldi} date={time.haldiCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.haldiCeremony} />
