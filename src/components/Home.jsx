@@ -19,7 +19,7 @@ const Home = () => {
         <BottomFixedContainer>
           <SubText>Best Compliments</SubText>
           <MT $MT="1vh" />
-          <SmallText>Shri.Raman Kumar Verma</SmallText>
+          <SmallText>Shri. Raman Kumar Verma</SmallText>
           <SmallText>Family and Relatives</SmallText>
           <MT $MT="4vh" />
         </BottomFixedContainer>

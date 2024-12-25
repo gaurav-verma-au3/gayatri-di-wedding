@@ -15,9 +15,9 @@ const Event = ({ image, title, date, venue, cords }) => {
         <Flowers />
         <EventImage src={image} />
         <MainText>{title}</MainText>
-        <MT $MT="1vh" />
+        <MT $MT="0.5vh" />
         <DateText>{dayjs(date).format("DD MMM YYYY hh:mm a")}</DateText>
-        <MT $MT="2vh" />
+        <MT $MT="0.5vh" />
         <Timer date={date} />
         <BottomFixedContainer>
           <SubText>Venue</SubText>
@@ -29,7 +29,7 @@ const Event = ({ image, title, date, venue, cords }) => {
           <TimerText>
             <MapButton href={cords}>Open in Maps</MapButton>
           </TimerText>
-          <MT $MT="4vh" />
+          <MT $MT="2.5vh" />
         </BottomFixedContainer>
       </div>
     </ScreensWrapper>
