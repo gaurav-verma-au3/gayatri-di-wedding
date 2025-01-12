@@ -1,32 +1,28 @@
 /* eslint-disable react/prop-types */
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { BottomFixedContainer, DateText, EventImage, MainText, MapButton, MT, ScreensWrapper, SmallText, SubText, TimerText } from "../App";
+import { BottomFixedContainer, DateText, MapButton, MT, ScreensWrapper, SmallText, SubText, TimerText } from "../App";
 import Flowers from "./Flowers";
 import { $height } from "../../constant";
 import Timer from "./Timer";
 
 dayjs.extend(relativeTime);
 
-const Event = ({ image, title, date, venue, cords }) => {
+const Event = ({ bg, date, venue, cords }) => {
   return (
-    <ScreensWrapper $height={$height}>
+    <ScreensWrapper $height={$height} bg={bg}>
       <div style={{ position: "relative", height: $height + "px" }}>
         <Flowers />
-        <EventImage src={image} alt={title} />
-        <MT $MT="25vh" />
-        <MainText>{title}</MainText>
-        <MT $MT="0.5vh" />
-        <DateText>{dayjs(date).format("DD MMM YYYY hh:mm a")}</DateText>
-        <MT $MT="0.5vh" />
-        <Timer date={date} />
         <BottomFixedContainer>
+          <DateText>{dayjs(date).format("DD MMM YYYY hh:mm a")}</DateText>
+          <Timer date={date} />
+          <MT $MT="1.5vh" />
           <SubText>Venue</SubText>
-          <MT $MT="1vh" />
           <div style={{ padding: "0px 2rem" }}>
+            <MT $MT="0.5vh" />
             <SmallText>{venue}</SmallText>
           </div>
-          <MT $MT="1.5vh" />
+          <MT $MT="1vh" />
           <TimerText>
             <MapButton href={cords}>Open in Maps</MapButton>
           </TimerText>

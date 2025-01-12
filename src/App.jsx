@@ -24,8 +24,17 @@ const place = {
   haldiCeremony: "https://maps.google.com/?q=26.9269111,81.2005689",
   mehandiCeremony: "https://maps.google.com/?q=26.9269111,81.2005689",
   sangeetCeremony: "https://maps.google.com/?q=26.9269111,81.2005689",
-  weddingCeremony: "https://maps.google.com/?q=26.903688,81.15479",
+  weddingCeremony: "https://maps.google.com/?q=26.903688,81.154797",
   vidayiCeremony: "https://maps.google.com/?q=26.903688,81.154797",
+};
+
+const address = {
+  ringCeremony: "Regal Palace, Near Jal Nigam office, Awas Vikas Colony, Barabanki",
+  haldiCeremony: "Shrinathji Tiles & Marbles, Faizabad Rd, Patel market, Barabanki",
+  mehandiCeremony: "Shrinathji Tiles & Marbles, Faizabad Rd, Patel market, Barabanki",
+  sangeetCeremony: "Shrinathji Tiles & Marbles, Faizabad Rd, Patel market, Barabanki",
+  weddingCeremony: "S.K. Marriage lawn, NH 27, Kurauli",
+  vidayiCeremony: "S.K. Marriage lawn, NH 27, Kurauli",
 };
 
 function App() {
@@ -70,13 +79,13 @@ function App() {
     <Wrapper>
       <Mobile id="mobile" $height={$height}>
         <AudioPlayer src={audioSrc} />
-        <Home />
-        <Event title={"Ring Ceremony"} image={images.engagement} date={time.ringCeremony} venue={"Regal Palace, Regal palace road, Near Jal Nigam office, Yogashram Rd, Awas Vikas Colony, Barabanki, 225001"} cords={place.ringCeremony} />
-        <Event title={"Haldi Ceremony"} image={images.haldi} date={time.haldiCeremony} venue={"Shrinathji Tiles & Marbles, Faizabad Rd, Ayodhya Nagar, Ganga Vihar Colny, Patel market, Barabanki, Uttar Pradesh 225001"} cords={place.haldiCeremony} />
-        <Event title={"Mehandi Ceremony"} image={images.mehandi} date={time.mehandiCeremony} venue={"Shrinathji Tiles & Marbles, Faizabad Rd, Ayodhya Nagar, Ganga Vihar Colny, Patel market, Barabanki, Uttar Pradesh 225001"} cords={place.mehandiCeremony} />
-        <Event title={"Sangeet Ceremony"} image={images.sangeet} date={time.sangeetCeremony} venue={"Shrinathji Tiles & Marbles, Faizabad Rd, Ayodhya Nagar, Ganga Vihar Colny, Patel market, Barabanki, Uttar Pradesh 225001"} cords={place.sangeetCeremony} />
-        <Event title={"Wedding Ceremony"} image={images.wedding} date={time.weddingCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.weddingCeremony} />
-        <Event title={"Vidayi Ceremony"} image={images.vidayii} date={time.vidayiCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.vidayiCeremony} />
+        <Home bg={images.home} />
+        <Event bg={images.engagement} title={"Ring Ceremony"} image={images.engagement} date={time.ringCeremony} venue={address.ringCeremony} cords={place.ringCeremony} />
+        <Event bg={images.haldi} title={"Haldi Ceremony"} image={images.haldi} date={time.haldiCeremony} venue={address.haldiCeremony} cords={place.haldiCeremony} />
+        <Event bg={images.mehandi} title={"Mehandi Ceremony"} image={images.mehandi} date={time.mehandiCeremony} venue={address.mehandiCeremony} cords={place.mehandiCeremony} />
+        <Event bg={images.sangeet} title={"Sangeet Ceremony"} image={images.sangeet} date={time.sangeetCeremony} venue={address.sangeetCeremony} cords={place.sangeetCeremony} />
+        <Event bg={images.wedding} title={"Wedding Ceremony"} image={images.wedding} date={time.weddingCeremony} venue={address.weddingCeremony} cords={place.weddingCeremony} />
+        <Event bg={images.vidayi} title={"Vidayi Ceremony"} image={images.vidayii} date={time.vidayiCeremony} venue={address.vidayiCeremony} cords={place.vidayiCeremony} />
       </Mobile>
     </Wrapper>
   );
@@ -102,26 +111,10 @@ export const ScreensWrapper = styled.div`
   height: ${(props) => props.$height}px;
   width: 100%;
   scroll-snap-align: start;
-  background: url(${images.bg});
+  background: url(${(props) => props.bg});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-`;
-export const HomeScreenWrapper = styled.div`
-  height: ${(props) => props.$height}px;
-  width: 100%;
-  scroll-snap-align: start;
-  background: url(${images.HomeBg});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-`;
-
-export const EventImage = styled.img`
-  padding-top: 18vh;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
 `;
 
 export const BottomFixedContainer = styled.div`
@@ -132,16 +125,7 @@ export const BottomFixedContainer = styled.div`
   max-width: 500px;
 `;
 
-export const MainText = styled.p`
-  font-family: "Beau Rivage", serif;
-  font-weight: 800;
-  font-style: normal;
-  text-align: ${(props) => props.$align || "center"};
-  font-size: 2.5rem;
-  color: #a88240;
-`;
 export const SubText = styled.p`
-  font-family: "Poppins", serif;
   text-align: ${(props) => props.$align || "center"};
   color: #a88240;
   font-weight: 600;
@@ -149,29 +133,25 @@ export const SubText = styled.p`
 
 export const SmallText = styled.p`
   font-size: 0.8rem;
-  font-family: "Poppins", serif;
   text-align: ${(props) => props.$align || "center"};
   color: #a88240;
 `;
 export const TimerText = styled.p`
   color: #a88240;
-  font-family: "Poppins", serif;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 800;
   text-align: ${(props) => props.$align || "center"};
 `;
 
 export const DateText = styled.p`
   color: #a88240;
-  font-family: "Poppins", serif;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 800;
   text-align: ${(props) => props.$align || "center"};
 `;
 
 export const MapButton = styled.a`
   font-size: 0.8rem;
-  font-family: "Poppins", serif;
   text-align: ${(props) => props.$align || "center"};
   text-decoration: none;
   padding: 0.3rem 0.5rem;
