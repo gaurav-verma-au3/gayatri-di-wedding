@@ -14,6 +14,7 @@ const Event = ({ image, title, date, venue, cords }) => {
       <div style={{ position: "relative", height: $height + "px" }}>
         <Flowers />
         <EventImage src={image} alt={title} />
+        <MT $MT="25vh" />
         <MainText>{title}</MainText>
         <MT $MT="0.5vh" />
         <DateText>{dayjs(date).format("DD MMM YYYY hh:mm a")}</DateText>

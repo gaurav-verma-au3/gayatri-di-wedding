@@ -1,5 +1,5 @@
-import bg from "./bg.webp";
-import HomeBg from "./HomeBg.webp";
+import bg from "./bgre.webp";
+import HomeBg from "./bgre.webp";
 import engagement from "./engagement.webp";
 import haldi from "./haldi.webp";
 import mehandi from "./mehandi.webp";

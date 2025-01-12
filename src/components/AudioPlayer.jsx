@@ -45,12 +45,12 @@ const AudioButton = styled.div`
   right: 1rem;
   font-size: 1rem;
   z-index: 1000;
-  color: #fec601;
+  color: #a88240;
   border-radius: 100%;
   width: 2rem;
   height: 2rem;
   justify-content: center;
   align-items: center;
   display: flex;
-  border: 3px solid #fec601;
+  border: 3px solid #a88240;
 `;

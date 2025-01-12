@@ -10,18 +10,20 @@ import { useEffect, useState } from "react";
 
 const time = {
   ringCeremony: "2025-01-20T13:00:00",
-  haldiCeremony: "2025-02-18T13:00:00",
-  mehandiCeremony: "2025-02-19T13:00:00",
-  sangeetCeremony: "2025-02-19T17:00:00",
-  weddingCeremony: "2025-02-22T19:00:00",
+  haldiCeremony: "2025-02-21T12:00:00",
+  mehandiCeremony: "2025-02-21T15:00:00",
+  sangeetCeremony: "2025-02-21T18:00:00",
+  weddingCeremony: "2025-02-22T20:00:00",
   vidayiCeremony: "2025-02-23T13:00:00",
 };
 
+// ;
+
 const place = {
   ringCeremony: "https://maps.google.com/?q=26.917857,81.1812233",
-  haldiCeremony: "https://maps.google.com/?q=26.743497,81.406681",
-  mehandiCeremony: "https://maps.google.com/?q=26.743497,81.406681",
-  sangeetCeremony: "https://maps.google.com/?q=26.743497,81.406681",
+  haldiCeremony: "https://maps.google.com/?q=26.9269111,81.2005689",
+  mehandiCeremony: "https://maps.google.com/?q=26.9269111,81.2005689",
+  sangeetCeremony: "https://maps.google.com/?q=26.9269111,81.2005689",
   weddingCeremony: "https://maps.google.com/?q=26.903688,81.15479",
   vidayiCeremony: "https://maps.google.com/?q=26.903688,81.154797",
 };
@@ -69,10 +71,10 @@ function App() {
       <Mobile id="mobile" $height={$height}>
         <AudioPlayer src={audioSrc} />
         <Home />
-        <Event title={"Ring Ceremony"} image={images.engagement} date={time.ringCeremony} venue={"Regal Palace, Regal palace road, Near Jal Nigam, office, Yogashram Rd, Awas Vikas Colony, Barabanki, 225001"} cords={place.ringCeremony} />
-        <Event title={"Haldi Ceremony"} image={images.haldi} date={time.haldiCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.haldiCeremony} />
-        <Event title={"Mehandi Ceremony"} image={images.mehandi} date={time.mehandiCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.mehandiCeremony} />
-        <Event title={"Sangeet Ceremony"} image={images.sangeet} date={time.sangeetCeremony} venue={"Vill + Post Uchita, Siddhaur - Quaiserganj Road, Barabanki 225413"} cords={place.sangeetCeremony} />
+        <Event title={"Ring Ceremony"} image={images.engagement} date={time.ringCeremony} venue={"Regal Palace, Regal palace road, Near Jal Nigam office, Yogashram Rd, Awas Vikas Colony, Barabanki, 225001"} cords={place.ringCeremony} />
+        <Event title={"Haldi Ceremony"} image={images.haldi} date={time.haldiCeremony} venue={"Shrinathji Tiles & Marbles, Faizabad Rd, Ayodhya Nagar, Ganga Vihar Colny, Patel market, Barabanki, Uttar Pradesh 225001"} cords={place.haldiCeremony} />
+        <Event title={"Mehandi Ceremony"} image={images.mehandi} date={time.mehandiCeremony} venue={"Shrinathji Tiles & Marbles, Faizabad Rd, Ayodhya Nagar, Ganga Vihar Colny, Patel market, Barabanki, Uttar Pradesh 225001"} cords={place.mehandiCeremony} />
+        <Event title={"Sangeet Ceremony"} image={images.sangeet} date={time.sangeetCeremony} venue={"Shrinathji Tiles & Marbles, Faizabad Rd, Ayodhya Nagar, Ganga Vihar Colny, Patel market, Barabanki, Uttar Pradesh 225001"} cords={place.sangeetCeremony} />
         <Event title={"Wedding Ceremony"} image={images.wedding} date={time.weddingCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.weddingCeremony} />
         <Event title={"Vidayi Ceremony"} image={images.vidayii} date={time.vidayiCeremony} venue={"S.K. Marriage lawn, NH 27, Kurauli, Uttar Pradesh 225001"} cords={place.vidayiCeremony} />
       </Mobile>
@@ -116,7 +118,7 @@ export const HomeScreenWrapper = styled.div`
 `;
 
 export const EventImage = styled.img`
-  padding-top: 35vh;
+  padding-top: 18vh;
   margin-left: 50%;
   transform: translateX(-50%);
   width: 200px;
@@ -132,35 +134,38 @@ export const BottomFixedContainer = styled.div`
 
 export const MainText = styled.p`
   font-family: "Beau Rivage", serif;
-  font-weight: 400;
+  font-weight: 800;
   font-style: normal;
   text-align: ${(props) => props.$align || "center"};
   font-size: 2.5rem;
-  color: #e91e23;
+  color: #a88240;
 `;
 export const SubText = styled.p`
   font-family: "Poppins", serif;
   text-align: ${(props) => props.$align || "center"};
-  color: #fec601;
+  color: #a88240;
+  font-weight: 600;
 `;
 
 export const SmallText = styled.p`
   font-size: 0.8rem;
   font-family: "Poppins", serif;
   text-align: ${(props) => props.$align || "center"};
-  color: #fec601;
+  color: #a88240;
 `;
 export const TimerText = styled.p`
-  color: #e91e23;
+  color: #a88240;
   font-family: "Poppins", serif;
   font-size: 1rem;
+  font-weight: 600;
   text-align: ${(props) => props.$align || "center"};
 `;
 
 export const DateText = styled.p`
-  color: #e91e23;
+  color: #a88240;
   font-family: "Poppins", serif;
   font-size: 1.2rem;
+  font-weight: 600;
   text-align: ${(props) => props.$align || "center"};
 `;
 
@@ -170,8 +175,8 @@ export const MapButton = styled.a`
   text-align: ${(props) => props.$align || "center"};
   text-decoration: none;
   padding: 0.3rem 0.5rem;
-  color: #fec601;
-  border: 2px solid #fec601;
+  color: #a88240;
+  border: 2px solid #a88240;
   border-radius: 5px;
 `;
 
