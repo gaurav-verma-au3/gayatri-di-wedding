@@ -8,8 +8,6 @@ import { $height } from "../constant";
 import AudioPlayer from "./components/AudioPlayer";
 import { useEffect, useState } from "react";
 
-import dayjs from "dayjs";
-import "dayjs/locale/hi";
 import Switch from "./components/Switch";
 
 const time = {
@@ -86,10 +84,6 @@ function App() {
   };
 
   useEffect(() => {
-    dayjs.locale(language ? "en" : "hi");
-  }, [language]);
-
-  useEffect(() => {
     document.getElementById("mobile").addEventListener("scroll", handleScroll);
     return () => document.getElementById("mobile").removeEventListener("scroll", handleScroll);
   }, []);
@@ -109,7 +103,7 @@ function App() {
         </SwitchContainer>
         <AudioPlayer src={audioSrc} />
         <Home language={language} bg={language ? images.home : images.home_hindi} />
-        <Event language={language} bg={language ? images.engagement : images.engagement_hindi} date={time.ringCeremony} venue={language ? address.en.ringCeremony : address.hi.ringCeremony} cords={place.ringCeremony} />
+        {/* <Event language={language} bg={language ? images.engagement : images.engagement_hindi} date={time.ringCeremony} venue={language ? address.en.ringCeremony : address.hi.ringCeremony} cords={place.ringCeremony} /> */}
         <Event language={language} bg={language ? images.haldi : images.haldi_hindi} date={time.haldiCeremony} venue={language ? address.en.haldiCeremony : address.hi.haldiCeremony} cords={place.haldiCeremony} />
         <Event language={language} bg={language ? images.mehandi : images.mehandi_hindi} date={time.mehandiCeremony} venue={language ? address.en.mehandiCeremony : address.hi.mehandiCeremony} cords={place.mehandiCeremony} />
         <Event language={language} bg={language ? images.sangeet : images.sangeet_hindi} date={time.sangeetCeremony} venue={language ? address.en.sangeetCeremony : address.hi.sangeetCeremony} cords={place.sangeetCeremony} />

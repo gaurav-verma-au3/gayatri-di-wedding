@@ -2,8 +2,8 @@
 import useCountDown from "../hooks/useCountDown";
 import { TimerText } from "../App";
 
-const Timer = ({ date }) => {
-  const countDown = useCountDown(date);
+const Timer = ({ date, language }) => {
+  const countDown = useCountDown(date, language);
 
   return <TimerText>{countDown}</TimerText>;
 };

@@ -4,21 +4,21 @@ import duration from "dayjs/plugin/duration";
 
 dayjs.extend(duration);
 
-const useCountDown = (futureDate) => {
+const useCountDown = (futureDate, language) => {
   const [timeRemaining, setTimeRemaining] = useState(() => calculateTimeRemaining(futureDate));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeRemaining(calculateTimeRemaining(futureDate));
+      setTimeRemaining(calculateTimeRemaining(futureDate, language));
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [futureDate]);
+  }, [futureDate, language]);
 
   return timeRemaining;
 };
 
-const calculateTimeRemaining = (futureDate) => {
+const calculateTimeRemaining = (futureDate, language) => {
   const now = dayjs();
   const eventDate = dayjs(futureDate);
 
@@ -27,14 +27,12 @@ const calculateTimeRemaining = (futureDate) => {
   }
 
   const diff = dayjs.duration(eventDate.diff(now));
-
-  const months = diff.months();
   const days = diff.days();
   const hours = diff.hours();
   const minutes = diff.minutes();
   const seconds = diff.seconds();
 
-  return `${months ? `${months} ${months > 1 ? "Months" : "Month"}` : ""}  ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  return language ? `${days}d ${hours}h ${minutes}m ${seconds}s` : `${days} दिन ${hours} घं॰ ${minutes} मि॰ ${seconds} से॰`;
 };
 
 export default useCountDown;
