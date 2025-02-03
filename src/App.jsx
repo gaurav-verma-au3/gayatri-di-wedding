@@ -56,25 +56,25 @@ function App() {
   const handleScroll = (e) => {
     const top = e.target.scrollTop;
     switch (top) {
+      // case 0:
+      //   setAudioSrc(audio.homeMp3);
+      //   break;
       case 0:
         setAudioSrc(audio.homeMp3);
         break;
       case $height * 1:
-        setAudioSrc(audio.ringMp3);
-        break;
-      case $height * 2:
         setAudioSrc(audio.haldiMp3);
         break;
-      case $height * 3:
+      case $height * 2:
         setAudioSrc(audio.mehandiMp3);
         break;
-      case $height * 4:
+      case $height * 3:
         setAudioSrc(audio.sangeetMp3);
         break;
-      case $height * 5:
+      case $height * 4:
         setAudioSrc(audio.shadiMp3);
         break;
-      case $height * 6:
+      case $height * 5:
         setAudioSrc(audio.vidayiMp3);
         break;
       default:
